@@ -35,7 +35,30 @@
                 "output": "assets"
               }
             ],
-            "styles": ["src/global.scss", "src/theme/variables.scss"],
+            "styles": [
+              {
+                "input": "node_modules/@ionic/angular/css/normalize.css",
+                "inject": true,
+                "bundleName": "normalize"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/structure.css",
+                "inject": true,
+                "bundleName": "structure"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/typography.css",
+                "inject": true,
+                "bundleName": "typography"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/core.css",
+                "inject": true,
+                "bundleName": "core"
+              },
+              "src/global.scss",
+              "src/theme/variables.scss"
+            ],
             "scripts": [],
             "browser": "src/main.ts"
           },
@@ -109,7 +132,30 @@
                 "output": "assets"
               }
             ],
-            "styles": ["src/global.scss", "src/theme/variables.scss"],
+            "styles": [
+              {
+                "input": "node_modules/@ionic/angular/css/normalize.css",
+                "inject": true,
+                "bundleName": "normalize"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/structure.css",
+                "inject": true,
+                "bundleName": "structure"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/typography.css",
+                "inject": true,
+                "bundleName": "typography"
+              },
+              {
+                "input": "node_modules/@ionic/angular/css/core.css",
+                "inject": true,
+                "bundleName": "core"
+              },
+              "src/global.scss",
+              "src/theme/variables.scss"
+            ],
             "scripts": []
           },
           "configurations": {
