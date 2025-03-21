@@ -1,28 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginPage } from './pages/login/login.page';
-import { HomePage } from './home/home.page';
-import { BrowserModule } from '@angular/platform-browser';
-import { IonicModule } from '@ionic/angular';
-import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' }, 
-  { path: 'login', component: LoginPage },
+  {
+    path: '',
+    redirectTo: 'login', 
+    pathMatch: 'full',
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then((m) => m.LoginPageModule),
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then((m) => m.HomePageModule),
+  },
+  {
+    path: '**', 
+    redirectTo: 'login',
+  },
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginPage,
-    HomePage
-  ],
-  imports: [
-    BrowserModule,
-    IonicModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
